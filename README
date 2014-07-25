@@ -1,0 +1,23 @@
+restricted_four_body_problem
+============================
+
+The file restrictedFourBody.cpp compute an upperBound on the number of solutions for the restricted four body problem for masses 0.05 < m1 <= m2 <= m3, m1 + m2 + m3 = 1.
+It writes in the file "inf11sol.dat" the boxes of mass space with < 11 solutions.
+	  in the file "11sol.dat" the boxes of mass space with 11 solutions.
+	  in the file "12sol.dat" the boxes of mass space with 12 solutions.
+	  in the file "13sol.dat" the boxes of mass space with 13 solutions.
+	  in the file "notGood.dat" the boxes of mass space where the algorithm fails.
+	  in the file "more13sol.dat" the boxes of mass space with > 13 solutions.
+
+To compile the code: make
+You need the CAPD librairy to be able to compile it (put the path to the CAPD librairy in the makefile).
+
+To execute the code: ./restrictedFourBody.exe
+This will replace the existing files in data by new ones.
+
+The format of the data file is such that they can be plot with gnuplot:
+plot "triangleMasses.dat" with linespoint
+replot "11sol.dat"
+replot "12sol.dat"
+replot "13sol.dat"
+
